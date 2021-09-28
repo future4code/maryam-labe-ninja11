@@ -44,9 +44,11 @@ Esses botões dever receber um efeito quando o cursor estiver sobre eles, ficand
 ### Inputs, listas e campos de texto
 
 No caso dos campos de input, vamos deixar os cantos em ângulo reto.
+
 ![image](https://user-images.githubusercontent.com/42283687/135159242-3bd97681-4b62-4efa-8f53-373cc541de70.png)
 
 Fizemos essa opção porque percebemos que alguns elementos não funcionam bem com cantos arredondados, como por exemplo, os campos que apresentam barra de rolagem:
+
 ![image](https://user-images.githubusercontent.com/42283687/135159421-1d895570-099f-4566-8d4a-f64830e0b73e.png)
 
 
