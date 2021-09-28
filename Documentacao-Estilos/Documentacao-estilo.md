@@ -23,15 +23,23 @@ A partir dessa fonte, criamos os seguintes estilos:
 
 ## Elementos gráficos
 
-
-
 ### Logomarca
 
-Optamos por editar a logomarca, separando a imagem da parte textual para que o nome da marca seja ampliado e receba assim maior destaque visual.
+No cabeçalho da página, optamos por editar a logomarca, separando a imagem da parte textual para que o nome da marca seja ampliado e receba assim maior destaque visual.
+
+![image](https://user-images.githubusercontent.com/42283687/135158783-2e3a1f95-2c48-4e8e-91fc-76c33c3d7da3.png)
 
 ### Botões
 
-Optamos por deixar os botões com cantos arredondados para ficar mais harmônico.
+Optamos por deixar os botões com cantos arredondados para ficar mais harmônico. Criamos um estilo primário, para ser utilizados quando a opção é a preferencial, de maior peso, e um botão secundário, para ser utilizado em opções de menor peso ou preferência:
+
+![image](https://user-images.githubusercontent.com/42283687/135158990-e3f72e3c-4dca-4452-af28-5b2e231c25e7.png)
+
+Esses botões dever receber um efeito quando o cursor estiver sobre eles, ficando ligeiramente mais escuros:
+
+![image](https://user-images.githubusercontent.com/42283687/135159101-9c1b2ab9-2eba-4a8a-a422-d726dfaffdd5.png)
+
+
 
 ### Inputs, listas e campos de texto
 
