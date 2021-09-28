@@ -11,4 +11,4 @@ Projeto desenvolvido para o curso de Web Full Stack da Labenu, turma Maryam, em 
 ## Documentação
 
 <li><a href="docs/1-Projeto de Interface.md">Projeto de Interface</a></li>
-<li><a href="https://github.com/future4code/maryam-labe-ninja11/blob/master/docs/Labeninjas-Wireframe-Telas.pdf">Wireframes</a></li>
+<li><a href="https://github.com/future4code/maryam-labe-ninja11/blob/master/docs/Labeninjas-Wireframe.pdf">Wireframes</a></li>
