@@ -4,19 +4,21 @@ Neste documento procuramos explicar e justificar nossas escolhas de design para 
 
 ## Paleta de cores
 
-[ img paleta]
-
 Escolhemos a paleta de cores da aplicação a partir da logomarca da empresa que nos foi fornecida. Através da ferramenta Image Color Picker detectamos que as cores principais:
+
+![image](https://user-images.githubusercontent.com/42283687/135150785-7fe58d64-a128-4d37-885f-94a4c8f16b2b.png)
+
 
 ## Fontes
 
 Escolhemos a fonte Roboto porque ela é sem serifa, o que facilita a leitura em telas. Além disso, é uma das fontes mais utilizadas na API Google Fontes e tem várias espessuras de haste, o que aumenta as suas possibilidades de aplicação.
 
-[ img fontes ]
+![image](https://user-images.githubusercontent.com/42283687/135151219-f664e45c-3811-4aff-be30-564245b00e7d.png)
+
 
 A partir dessa fonte, criamos os seguintes estilos:
 
-[ img estilos ]
+
 
 ## Elementos gráficos
 
