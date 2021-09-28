@@ -18,9 +18,12 @@ Escolhemos a fonte Roboto porque ela é sem serifa, o que facilita a leitura em 
 
 A partir dessa fonte, criamos os seguintes estilos:
 
+![image](https://user-images.githubusercontent.com/42283687/135151399-f9fc85b8-7c37-4a39-bc3b-a8daccaefaad.png)
 
 
 ## Elementos gráficos
+
+
 
 ### Logomarca
 
