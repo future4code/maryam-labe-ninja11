@@ -3,6 +3,7 @@ import EstilosAplicados from './EstilosAplicados';
 import CardServicos from './CardServicos/CardServicos';
 import Home from './Home/Home';
 import TelaCarrinho from './TelaCarrinho/TelaCarrinho';
+import TelaServicos from './TelaServicos/TelaServicos'
 
 
 export class AppContainer extends Component {
