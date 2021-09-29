@@ -1,9 +1,12 @@
 import styled from "styled-components";
 
 export const EstiloCardServicos = styled.div`
-  width: 10%;
-  height: 10%;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 12rem;
+  height: 10rem;
+  padding: 20px 40px;
   background-color: #FFF;
   border: 2px solid #8265c9;
 
