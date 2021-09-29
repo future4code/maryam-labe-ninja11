@@ -14,4 +14,20 @@ export const EstiloCardServicos = styled.div`
     padding: 0;
     margin: 0;
   }
+
+  img{  
+  width: 30px;
+  height: 30px; 
+}
+
+a{
+  color: #8265c9;
+  text-decoration: none;
+}
+`
+
+export const ContainerDetalhes = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `
