@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import EstilosAplicados from './EstilosAplicados';
 import CardServicos from './CardServicos/CardServicos';
+import Home from './Home/Home';
 
 
 export class AppContainer extends Component {
