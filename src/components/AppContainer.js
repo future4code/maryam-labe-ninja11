@@ -16,7 +16,6 @@ export class AppContainer extends Component {
           dataFinal={'06/08/2021'}
           preco={'800,00'}
         />
-        <TelaCarrinho/>
       </div>
     )
   }
