@@ -10,7 +10,12 @@ import {
   TextoCorpoStrong,
   TextoLink
 } from '../Estilos';
-import { EstiloCardServicos } from "./EstiloCardServicos";
+import FacebookIcon from "../../Img/icone-facebook.svg"
+import Carrinho from "../../Img/icone-carrinho.svg"
+import {
+  EstiloCardServicos,
+  ContainerDetalhes
+} from "./EstiloCardServicos";
 
 export default class CardServicos extends React.Component {
   render() {
@@ -19,7 +24,10 @@ export default class CardServicos extends React.Component {
         <Header2>{this.props.titulo}</Header2>
         <TextoCorpo>Até {this.props.dataFinal} por</TextoCorpo>
         <TextoCorpoStrong> R${this.props.preco}</TextoCorpoStrong>
-        <Header4><a href="#">Ver detalhes</a></Header4>
+        <ContainerDetalhes>
+          <Header4><a href="#">Ver detalhes</a></Header4>
+          <img src={Carrinho} />
+        </ContainerDetalhes>
       </EstiloCardServicos>
     )
   }
