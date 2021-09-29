@@ -40,6 +40,14 @@ export const Header4 = styled.h4`
   text-transform: uppercase;
   font-weight: 400;
 `
+
+export const Header5 = styled.h4`
+display: inline;
+font-size: 24px;
+font-weight: 400;
+color: #505050;
+`
+
 export const TextoCorpo = styled.p`
   display: inline;
   font-size: 16px;
