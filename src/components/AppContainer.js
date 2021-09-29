@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import EstilosAplicados from './EstilosAplicados';
 import CardServicos from './CardServicos/CardServicos';
+import Home from './Home/Home';
 
 
 export class AppContainer extends Component {
@@ -8,12 +9,13 @@ export class AppContainer extends Component {
     return (
       <div>
         {/* O componente EstilosAplicados é só para testar os estilos do Estilos.js e pode ser comentado  */}
-        <EstilosAplicados />
+        {/* <EstilosAplicados />
         <CardServicos
           titulo={'Título'}
           dataFinal={'06/08/2021'}
           preco={'800,00'}
-        />
+        /> */}
+        <Home/>
       </div>
     )
   }
