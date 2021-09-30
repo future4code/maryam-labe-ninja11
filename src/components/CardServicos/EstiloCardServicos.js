@@ -4,11 +4,12 @@ export const EstiloCardServicos = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 12rem;
-  height: 10rem;
+  width: 17rem;
+  height: 17rem;
   padding: 20px 40px;
   background-color: #FFF;
   border: 2px solid #8265c9;
+  margin: 3rem;
 
   h1,h2,h3,h4,h5,h6,p{
     padding: 0;
