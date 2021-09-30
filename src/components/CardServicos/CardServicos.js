@@ -17,6 +17,7 @@ import {
   ContainerDetalhes
 } from "./EstiloCardServicos";
 import TelaDetalhes from "../TelaDetalhesCardServicos/TelaDetalhes";
+import Botao from "../Botao/Botao";
 
 export default class CardServicos extends React.Component {
   render() {
@@ -29,6 +30,9 @@ export default class CardServicos extends React.Component {
           <Header4><a href={TelaDetalhes}>Ver detalhes</a></Header4>
           <img src={Carrinho} />
         </ContainerDetalhes>
+        <Botao
+          nome={"Adicionar ao carrinho"}
+          onClick={() => this.props.adicionar()} />
       </EstiloCardServicos>
     )
   }
