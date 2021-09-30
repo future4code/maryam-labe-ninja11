@@ -7,10 +7,40 @@ import TelaCadastro from './TelaCadastro/TelaCadastro';
 import TelaDetalhes from './TelaDetalhesCardServicos/TelaDetalhes';
 import TelaServicos from './TelaServicos/TelaServicos';
 import Container from './Estilos.js'
+import { url } from '../url/url'
+import axios from 'axios';
+
+const headers = {
+  headers: {
+    Authorization: "47c7672d-2613-4c00-b35e-9a1776b1455e"
+  }
+}
 
 export class AppContainer extends Component {
   state = {
-    tela: "detalhes",
+
+    tela: "servicos",
+    servicos: [],
+    carrinho: [],
+  }
+
+  componentDidMount() {
+    this.buscarTodosOsServicos()
+  }
+
+  buscarTodosOsServicos = async () => {
+    try {
+      const todosOsServicos = await axios.get(`${url}/jobs`, headers)
+      console.log(todosOsServicos.data.jobs)
+      this.setState({ servicos: todosOsServicos.data.jobs })
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
+  adicionarAoCarrinho = (produto) => {
+    this.setState({ carrinho: [...this.state.carrinho, produto] })
+
   }
 
   trocarTela = (tela) => {
@@ -33,7 +63,7 @@ export class AppContainer extends Component {
     }
     if (this.state.tela === "servicos") {
       return (
-        <TelaServicos />
+        <TelaServicos trocarTela={this.trocarTela}/>
       )
     }
     if (this.state.tela === "carrinho") {
@@ -41,12 +71,14 @@ export class AppContainer extends Component {
         <TelaCarrinho />
       )
     }
-    if (this.state.tela === "detalhes") {
+
+    if (this.state.tela === "detalhe"){
       return (
         <TelaDetalhes 
         trocarTela={this.trocarTela}
         />
       )
+
     }
   }
 
