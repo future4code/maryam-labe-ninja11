@@ -9,7 +9,7 @@ export const EstiloCardServicos = styled.div`
   padding: 20px 40px;
   background-color: #FFF;
   border: 2px solid #8265c9;
-  margin: 3rem;
+  margin: 1.5rem;
 
   h1,h2,h3,h4,h5,h6,p{
     padding: 0;

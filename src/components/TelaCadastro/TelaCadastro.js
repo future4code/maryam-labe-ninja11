@@ -3,7 +3,6 @@ import axios from "axios"
 import { MainContainer, DivPrincipal, Descricao } from './EstiloTelaCadastro'
 import Botao from "../Botao/Botao"
 
-
 const headers = {
   headers: {
     Authorization: "47c7672d-2613-4c00-b35e-9a1776b1455e"
@@ -80,6 +79,7 @@ export default class TelaCadastro extends React.Component {
     return (
       <MainContainer>
         <DivPrincipal>
+
         <h2>
           Adicione o seu serviço!
         </h2>
