@@ -10,7 +10,9 @@ import Container from './Estilos.js'
 
 export class AppContainer extends Component {
   state = {
+
     tela: "servicos",
+
   }
 
   trocarTela = (tela) => {
@@ -33,7 +35,7 @@ export class AppContainer extends Component {
     }
     if (this.state.tela === "servicos") {
       return (
-        <TelaServicos />
+        <TelaServicos trocarTela={this.trocarTela}/>
       )
     }
     if (this.state.tela === "carrinho") {
@@ -41,10 +43,12 @@ export class AppContainer extends Component {
         <TelaCarrinho />
       )
     }
-    if (this.state.tela === "detalhes") {
+
+    if (this.state.tela === "detalhe"){
       return (
         <TelaDetalhes />
       )
+
     }
   }
 
