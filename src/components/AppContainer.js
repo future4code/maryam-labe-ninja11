@@ -4,12 +4,13 @@ import Home from './Home/Home';
 import Header from './Header/Header';
 import TelaCarrinho from './TelaCarrinho/TelaCarrinho';
 import TelaCadastro from './TelaCadastro/TelaCadastro';
+import TelaDetalhes from './TelaDetalhesCardServicos/TelaDetalhes';
 import TelaServicos from './TelaServicos/TelaServicos';
 import Container from './Estilos.js'
 
 export class AppContainer extends Component {
   state = {
-    tela: "home",
+    tela: "detalhes",
   }
 
   trocarTela = (tela) => {
@@ -38,6 +39,11 @@ export class AppContainer extends Component {
     if (this.state.tela === "carrinho") {
       return (
         <TelaCarrinho />
+      )
+    }
+    if (this.state.tela === "detalhes") {
+      return (
+        <TelaDetalhes />
       )
     }
   }
