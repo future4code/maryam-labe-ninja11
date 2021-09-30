@@ -1,6 +1,6 @@
 import React from "react"
 import axios from "axios"
-import { MainContainer, Descricao, FiltroContainer } from './EstiloTelaServicos'
+import { MainContainer, Descricao, FiltroContainer, InputContainer } from './EstiloTelaServicos'
 import CardServicos from "../CardServicos/CardServicos"
 // import { CardServicos } from '../CardServicos'
 import { url } from '../../url/url'
@@ -35,19 +35,27 @@ export default class TelaServicos extends React.Component {
             <div>
                  <MainContainer>
                      <FiltroContainer>
-                        <label>Valor minimo</label>
-                        <input />
-                        <label>Valor máximo</label>
-                        <input />
-                        <label>Ordenar por</label>
-                        <select>
-                            <option>Maior preço</option>
-                            <option>Menor preço</option>
-                            <option>Titulo</option>
-                            <option>Prazo</option>
-                        </select>
-                        <label>Buscar</label>
-                        <input />
+                         <InputContainer>
+                            <label>Valor minimo</label>
+                            <div>R$<input /></div>
+                        </InputContainer>
+                        <InputContainer>
+                            <label>Valor máximo</label>
+                            <div>R$<input /></div>
+                        </InputContainer>
+                        <InputContainer>
+                            <label>Buscar</label>
+                            <input />
+                        </InputContainer>
+                        <div>
+                            <p>Ordenar por</p>
+                            <select>
+                                <option>Maior preço</option>
+                                <option>Menor preço</option>
+                                <option>Titulo</option>
+                                <option>Prazo</option>
+                            </select>
+                        </div>
                      </FiltroContainer>
                     {this.state.servicos.map((servico) => {
                         return <CardServicos 
