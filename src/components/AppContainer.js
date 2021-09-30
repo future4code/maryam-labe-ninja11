@@ -2,15 +2,7 @@ import React, { Component } from 'react';
 import EstilosAplicados from './EstilosAplicados';
 import CardServicos from './CardServicos/CardServicos';
 import Home from './Home/Home';
-
 import Header from './Header/Header';
-
-
-
-
-
-
-
 import TelaCarrinho from './TelaCarrinho/TelaCarrinho';
 import TelaServicos from './TelaServicos/TelaServicos'
 
@@ -44,6 +36,11 @@ export class AppContainer extends Component {
         <div>Serviços</div>
       )
     }
+    if (this.state.tela === "carrinho") {
+      return (
+        <TelaCarrinho />
+      )
+    }
   }
 
 
@@ -51,7 +48,9 @@ export class AppContainer extends Component {
     return (
       <div>
 
-        <Header />
+        <Header 
+          trocarTela = {this.trocarTela}
+        />
 
 
 
