@@ -16,8 +16,10 @@ export const MainContainer = styled.div `
 
     input {
         padding: 0.5em 0.5em;
-        border-radius: 3px;
-        border: 1px solid purple;
+        /* border-radius: 9px; */
+        border: none;
+        outline: none;
+        font-size: 1rem;
     }
 
     button {
@@ -29,10 +31,17 @@ export const MainContainer = styled.div `
     }
 
     select {
-        border-radius: 3px;
-        border: 1px solid purple;
+        /* border-radius: 9px; */
+        border: 1px solid #8265c9;
         width: 170px;
         text-align: center;
+        color: #8265c9;
+        padding: 0.5em 0.5em;
+        font-size: 1rem;
+    }
+
+    label {
+        color: #8265c9;
     }
 `
 
@@ -47,4 +56,11 @@ export const Descricao = styled.textarea `
 export const FiltroContainer = styled.div `
     display: flex;
     grid-column: 1/5;
+`
+
+export const InputContainer = styled.div `
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    border: 1px solid #8265c9;
 `
