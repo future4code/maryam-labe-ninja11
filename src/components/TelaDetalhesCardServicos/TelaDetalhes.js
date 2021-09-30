@@ -1,6 +1,5 @@
 import React from "react";
 import DetalhesCardServicos from "../DetalhesCardProduto/DetalhesCardServico";
-import EstilosAplicados from "../EstilosAplicados";
 import { EstiloTelaDetalhes } from "./EstiloTelaDetalhes";
 
 
@@ -8,8 +7,7 @@ import { EstiloTelaDetalhes } from "./EstiloTelaDetalhes";
       render() {
           return(
             <EstiloTelaDetalhes>
-              {/* <EstilosAplicados/> */}
-              <DetalhesCardServicos/>
+              <DetalhesCardServicos trocarTela={() => this.props.trocarTela("servicos")}/>
             </EstiloTelaDetalhes>
           )
       }

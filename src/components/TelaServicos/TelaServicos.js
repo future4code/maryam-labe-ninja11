@@ -62,7 +62,6 @@ export default class TelaServicos extends React.Component {
                             titulo={servico.title}
                             dataFinal={servico.dueDate}
                             preco={servico.price}
-                        
                         />
                     })}
                 </MainContainer> 

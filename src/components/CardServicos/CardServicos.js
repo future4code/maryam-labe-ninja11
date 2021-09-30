@@ -26,7 +26,7 @@ export default class CardServicos extends React.Component {
         <TextoCorpo>Até {this.props.dataFinal} por</TextoCorpo>
         <TextoCorpoStrong> R${this.props.preco}</TextoCorpoStrong>
         <ContainerDetalhes>
-          <Header4><a href={TelaDetalhes}>Ver detalhes</a></Header4>
+          <Header4><a href='#'>Ver detalhes</a></Header4>
           <img src={Carrinho} />
         </ContainerDetalhes>
       </EstiloCardServicos>
