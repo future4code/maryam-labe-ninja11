@@ -13,7 +13,10 @@ const headers = {
 
 export default class TelaServicos extends React.Component {
     state = {
-        servicos: []
+        servicos: [],
+        valorMaximo: "",
+        valorMinimo: "",
+        busca: ""
     }
 
     componentDidMount() {
@@ -30,8 +33,31 @@ export default class TelaServicos extends React.Component {
         }
     }
 
+    onChangeValorMaximo = (event) => {
+        this.setState({ valorMaximo: event.target.value })
+        console.log(this.state.valorMaximo)
+    }
+
+    onChangeValorMinimo = (event) => {
+        this.setState({ valorMinimo: event.target.value })
+        console.log(this.state.valorMaximo)
+    }
+
+    onChangeBusca = (event) => {
+        this.setState({ busca: event.target.value });
+    }
+
     renderizarCards = () => {
         const listaMapeada = this.state.servicos
+            .filter((servico) => {
+                return servico.title.toLowerCase().includes(this.state.busca.toLowerCase())
+            })
+            .filter((servico) => {
+                return this.state.valorMaximo === "" || servico.price < this.state.valorMaximo
+            })
+            .filter((servico) => {
+                return this.state.valorMinimo === "" || servico.price > this.state.valorMinimo
+            })
             .map(servico => {
                 return (
                     <CardServicos key={servico.id}
@@ -45,6 +71,8 @@ export default class TelaServicos extends React.Component {
         return listaMapeada;
     }
 
+    
+
     render() {
         return (
             <div>
@@ -52,15 +80,15 @@ export default class TelaServicos extends React.Component {
                     <FiltroContainer>
                         <InputContainer>
                             <label>Valor minimo</label>
-                            <div>R$<input /></div>
+                            <div>R$<input onChange={this.onChangeValorMinimo}/></div>
                         </InputContainer>
                         <InputContainer>
                             <label>Valor máximo</label>
-                            <div>R$<input /></div>
+                            <div>R$<input onChange={this.onChangeValorMaximo}/></div>
                         </InputContainer>
                         <InputContainer>
                             <label>Buscar</label>
-                            <input />
+                            <input onChange={this.onChangeBusca}/>
                         </InputContainer>
                         <div>
                             <p>Ordenar por</p>
@@ -73,18 +101,8 @@ export default class TelaServicos extends React.Component {
                         </div>
 
                      </FiltroContainer>
-                    {this.state.servicos.map((servico) => {
-                        return <CardServicos 
-                            titulo={servico.title}
-                            dataFinal={servico.dueDate}
-                            preco={servico.price}
-
-
-                            trocarTela={this.props.trocarTela}
-                        
-
-                        />
-                    })}
+                    
+                    {this.renderizarCards()}
                 </MainContainer> 
 
             </div>
