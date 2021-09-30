@@ -4,7 +4,8 @@ export const EstiloCardProdutoCarrinho = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 20px;
+    padding: 20px 20px;
+    margin: 5px 0;
     width: 90vw;
     border: 1px solid #8265c9;
 
