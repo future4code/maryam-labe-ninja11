@@ -4,22 +4,7 @@ import Home from '../Home/Home';
  import Carrinho from '../TelaCarrinho/TelaCarrinho'
 
 export default class Header extends Component {
-    state = {
-        telaAtual: "home"
-    }
-    
-    atualizaTela = (tela) => {
-        this.setState({telaAtual: tela})
-        
-    }
 
-    mostraTela = () =>{
-        if(this.state.telaAtual === "home"){
-            return <Home/>
-        }else if(this.state.telaAtual === "carrinho"){
-            return <p>Carrinho</p>
-        }
-    }
 
     render() {
         return (
@@ -32,13 +17,13 @@ export default class Header extends Component {
                     <ImagemLogo src={require('../../Img/labeninjasbranco.png')} alt="logo-labeninjas"/>
                 </LogoContainer>   
                 <BotoesContainer>
-                    <BotoaoHeader onClick={()=>this.atualizaTela("home")}>Home</BotoaoHeader>
-                    <BotoaoHeader onClick={()=>this.atualizaTela("carrinho")}>Carrinho</BotoaoHeader>
+                    <BotoaoHeader onClick={()=>this.props.trocarTela("home")}>Home</BotoaoHeader>
+                    <BotoaoHeader onClick={()=>this.props.trocarTela("carrinho")}>Carrinho</BotoaoHeader>
                 </BotoesContainer>
             </HeaderContainer>
             
         
-            {this.mostraTela()}
+            
              
             
             </div>
