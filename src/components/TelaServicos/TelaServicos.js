@@ -7,12 +7,12 @@ import { url } from '../../url/url'
 
 const headers = {
     headers: {
-      Authorization: "47c7672d-2613-4c00-b35e-9a1776b1455e"
+        Authorization: "47c7672d-2613-4c00-b35e-9a1776b1455e"
     }
-  }
+}
 
 export default class TelaServicos extends React.Component {
-    state={
+    state = {
         servicos: []
     }
 
@@ -20,22 +20,37 @@ export default class TelaServicos extends React.Component {
         this.buscarTodosOsServicos()
     }
 
-    buscarTodosOsServicos = async() =>  {
-        try{
+    buscarTodosOsServicos = async () => {
+        try {
             const todosOsServicos = await axios.get(`${url}/jobs`, headers)
             console.log(todosOsServicos.data.jobs)
-            this.setState({servicos: todosOsServicos.data.jobs})
-        }catch(err){
+            this.setState({ servicos: todosOsServicos.data.jobs })
+        } catch (err) {
             console.log(err)
         }
+    }
+
+    renderizarCards = () => {
+        const listaMapeada = this.state.servicos
+            .map(servico => {
+                return (
+                    <CardServicos key={servico.id}
+                        titulo={servico.title}
+                        dataFinal={servico.dueDate}
+                        preco={servico.price}
+                        adicionar={() => this.props.adicionarAoCarrinho}
+                    />
+                )
+            })
+        return listaMapeada;
     }
 
     render() {
         return (
             <div>
-                 <MainContainer>
-                     <FiltroContainer>
-                         <InputContainer>
+                <MainContainer>
+                    <FiltroContainer>
+                        <InputContainer>
                             <label>Valor minimo</label>
                             <div>R$<input /></div>
                         </InputContainer>
@@ -56,16 +71,17 @@ export default class TelaServicos extends React.Component {
                                 <option>Prazo</option>
                             </select>
                         </div>
-                     </FiltroContainer>
+                    </FiltroContainer>
                     {this.state.servicos.map((servico) => {
-                        return <CardServicos 
+                        return <CardServicos
                             titulo={servico.title}
                             dataFinal={servico.dueDate}
                             preco={servico.price}
-                        
+
                         />
                     })}
-                </MainContainer> 
+                    {this.renderizarCards()}
+                </MainContainer>
             </div>
         )
     }

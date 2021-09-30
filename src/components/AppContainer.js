@@ -10,7 +10,7 @@ import Container from './Estilos.js'
 
 export class AppContainer extends Component {
   state = {
-    tela: "detalhes",
+    tela: "servicos",
   }
 
   trocarTela = (tela) => {
