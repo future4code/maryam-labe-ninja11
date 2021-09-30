@@ -1,7 +1,8 @@
 import React from "react"
 import axios from "axios"
-import { MainContainer, Descricao } from './EstiloTelaCadastro'
-// import { CardServicos } from '../CardServicos'
+import { MainContainer, DivPrincipal, Descricao } from './EstiloTelaCadastro'
+import Botao from "../Botao/Botao"
+
 
 const headers = {
   headers: {
@@ -22,10 +23,6 @@ export default class TelaCadastro extends React.Component {
   componentDidMount() {
     this.getAllJobs()
   }
-
-  // componentDidUpdate() {
-  //     this.getAllJobs()
-  // }
 
   handleTitulo = (evento) => {
     this.setState({ tituloServico: evento.target.value })
@@ -82,14 +79,14 @@ export default class TelaCadastro extends React.Component {
   render() {
     return (
       <MainContainer>
-
+        <DivPrincipal>
         <h2>
           Adicione o seu serviço!
         </h2>
         <br />
 
         <label>Nome:</label>
-        <br />
+        
         <input
           value={this.state.tituloServico}
           onChange={this.handleTitulo}
@@ -99,7 +96,7 @@ export default class TelaCadastro extends React.Component {
         <br />
 
         <label>Descrição:</label>
-        <br />
+        
         <Descricao
           value={this.state.descricaoServico}
           onChange={this.handleDescricao}
@@ -109,7 +106,7 @@ export default class TelaCadastro extends React.Component {
         <br />
 
         <label>Preço:</label>
-        <br />
+        
         <input
           value={this.state.precoServico}
           onChange={this.handlePreco}
@@ -119,31 +116,32 @@ export default class TelaCadastro extends React.Component {
         <br />
 
         <label>Pagamento:</label>
-        <br />
+        
         <select
           value={this.state.pagamentoTipo}
           onChange={this.handleMetodoPagamento}
         >
+          <option value=""></option>
           <option value="debito">Cartão de débito</option>
           <option value="credito">Cartão de crédito</option>
           <option value="paypal">Paypal</option>
           <option value="boleto">Boleto</option>
           <option value="pix">Pix</option>
         </select>
+        <br />
 
         <label>Prazo:</label>
-        <br />
+        
         <input
           value={this.ateQuando}
           onChange={this.handleAteQuando}
           type="text"
-          placeholder="(ANO/MÊS/DIA)"
+          placeholder="ANO-MÊS-DIA - AAAA-MM-DD"
         />
-        <br />
-        <br />
 
-        <button onClick={this.createJob}>Criar anúncio</button>
+        <Botao nome={'Criar anúncio'} onClick={this.createJob}/>
 
+        </DivPrincipal>
       </MainContainer>
     )
   }
