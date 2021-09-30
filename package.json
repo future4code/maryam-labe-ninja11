@@ -13,6 +13,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-jss": "8.0.0",
+    "react-loader-spinner": "^4.0.0",
     "react-scripts": "^3.4.3",
     "styled-components": "^5.1.0"
   },
