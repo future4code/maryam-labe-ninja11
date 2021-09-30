@@ -6,11 +6,15 @@ import Header from './Header/Header';
 
 
 export class AppContainer extends Component {
+
+
+
+
   render() {
     return (
       <div>
         <Header />
-        
+
 
         {/* O componente EstilosAplicados é só para testar os estilos do Estilos.js e pode ser comentado  */}
         {/* <EstilosAplicados />
