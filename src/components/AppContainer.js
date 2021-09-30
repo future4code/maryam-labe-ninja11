@@ -4,6 +4,8 @@ import Home from './Home/Home';
 import Header from './Header/Header';
 import TelaCarrinho from './TelaCarrinho/TelaCarrinho';
 import TelaCadastro from './TelaCadastro/TelaCadastro';
+import TelaServicos from './TelaServicos/TelaServicos';
+import Container from './Estilos.js'
 
 export class AppContainer extends Component {
   state = {
@@ -30,7 +32,7 @@ export class AppContainer extends Component {
     }
     if (this.state.tela === "servicos") {
       return (
-        <div>Serviços</div>
+        <TelaServicos />
       )
     }
     if (this.state.tela === "carrinho") {
