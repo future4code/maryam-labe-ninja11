@@ -19,7 +19,8 @@ const headers = {
 export class AppContainer extends Component {
   state = {
     tela: "servicos",
-    servicos: []
+    servicos: [],
+    carrinho: [],
   }
 
   componentDidMount() {
