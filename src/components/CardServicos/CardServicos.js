@@ -28,7 +28,10 @@ export default class CardServicos extends React.Component {
         <TextoCorpoStrong> R${this.props.preco}</TextoCorpoStrong>
         <ContainerDetalhes>
 
+
+
           <Header4><a href="#" onClick={()=>this.props.trocarTela("detalhe")}>Ver detalhes</a></Header4>
+
 
           <img src={Carrinho} />
         </ContainerDetalhes>

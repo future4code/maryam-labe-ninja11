@@ -74,7 +74,9 @@ export class AppContainer extends Component {
 
     if (this.state.tela === "detalhe"){
       return (
-        <TelaDetalhes />
+        <TelaDetalhes 
+        trocarTela={this.trocarTela}
+        />
       )
 
     }
