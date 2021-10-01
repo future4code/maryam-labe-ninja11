@@ -4,6 +4,7 @@ import Home from './Home/Home';
 import Header from './Header/Header';
 import TelaCarrinho from './TelaCarrinho/TelaCarrinho';
 import TelaCadastro from './TelaCadastro/TelaCadastro';
+import Footer from './Footer/Footer';
 
 export class AppContainer extends Component {
   state = {
@@ -47,6 +48,7 @@ export class AppContainer extends Component {
           trocarTela={this.trocarTela}
         />
         {this.renderizarTela()}
+        <Footer />
       </div>
     )
   }
