@@ -8,4 +8,9 @@ export const EstiloDetalhesCardServicos = styled.div`
     width: 50%;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 1025px){
+        width: 90%;
+        padding: 5px;
+    }
 `

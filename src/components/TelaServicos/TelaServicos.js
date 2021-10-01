@@ -81,7 +81,10 @@ export default class TelaServicos extends React.Component {
                         titulo={servico.title}
                         dataFinal={servico.dueDate}
                         preco={servico.price}
+                        formasDePagamento={servico.paymentMethods}
+                        descricao={servico.description}
                         adicionar={() => this.props.adicionarAoCarrinho}
+                        trocarTela={this.props.trocarTela}
                     />
                 )
             })
@@ -128,7 +131,7 @@ export default class TelaServicos extends React.Component {
                         </SelectContainer>
 
                      </FiltroContainer>
-                    
+
                     {this.renderizarCards()}
                 </MainContainer> 
 

@@ -19,7 +19,7 @@ const headers = {
 export class AppContainer extends Component {
   state = {
 
-    tela: "servicos",
+    tela: "home",
     servicos: [],
     carrinho: [],
   }
@@ -72,7 +72,7 @@ export class AppContainer extends Component {
       )
     }
 
-    if (this.state.tela === "detalhe"){
+    if (this.state.tela === "detalhes"){
       return (
         <TelaDetalhes 
         trocarTela={this.trocarTela}

@@ -45,6 +45,13 @@ export const MainContainer = styled.div `
     label {
         color: #8265c9;
     }
+
+    @media (max-width: 1025px){
+        width: 100%;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 `
 
 
@@ -52,6 +59,11 @@ export const MainContainer = styled.div `
 export const FiltroContainer = styled.div `
     display: flex;
     grid-column: 1/5;
+    
+    @media (max-width: 1025px){
+        display: flex;
+        flex-direction: column;
+    }
 `
 
 export const LabelContainer = styled.div `
