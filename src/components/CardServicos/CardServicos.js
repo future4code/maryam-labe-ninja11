@@ -32,7 +32,7 @@ export default class CardServicos extends React.Component {
         <TextoCorpoStrong> R${this.props.preco}</TextoCorpoStrong>
         <ContainerDetalhes>
           <Header4><a href="#" onClick={() => this.props.mostraDetalhe(this.props.servico)}>Ver detalhes</a></Header4>
-          <img src={Carrinho} />
+          {/* <img src={Carrinho} /> */}
         </ContainerDetalhes>
         <Botao
           nome={'Adicionar ao carrinho'}
