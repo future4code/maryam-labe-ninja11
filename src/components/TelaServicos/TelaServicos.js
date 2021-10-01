@@ -56,6 +56,8 @@ export default class TelaServicos extends React.Component {
         this.setState({ ordenacao: event.target.value })
     }
 
+    
+
     renderizarCards = () => {
 
         const listaMapeada = this.state.servicos
@@ -94,7 +96,7 @@ export default class TelaServicos extends React.Component {
                         formasDePagamento={servico.paymentMethods}
                         descricao={servico.description}
                         adicionar={this.props.adicionar}
-                        produto={servico}
+                        servico={servico}
                         mostraDetalhe={this.mostraDetalhe}
                     />
                 )
