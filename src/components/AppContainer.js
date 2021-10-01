@@ -71,15 +71,6 @@ export class AppContainer extends Component {
         <TelaCarrinho />
       )
     }
-
-    if (this.state.tela === "detalhes"){
-      return (
-        <TelaDetalhes 
-        trocarTela={this.trocarTela}
-        />
-      )
-
-    }
   }
 
   render() {

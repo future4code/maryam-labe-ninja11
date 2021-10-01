@@ -22,17 +22,7 @@ import moment from "moment";
 
 export default class CardServicos extends React.Component {
   render() {
-    // console.log(this.props.dataFinal)
-    // const data = this.props.dataFinal;
-    // console.log(data)
-    // console.log(new Intl.DateTimeFormat('pt-BR').format(data))
-    // console.log(new Intl.DateTimeFormat('pt-BR').format(this.props.dataFinal));
-    // const data = moment().format(this.props.dataFinal);
-    // console.log("data formatada",data)
-    // console.log(this.props.dataFinal.toLocaleDateString())
-
-    // console.log(this.props.dataFinal)
-    // console.log(new Intl.DateTimeFormat('pt-BR').format(this.props.dataFinal));
+    
     return (
       <EstiloCardServicos>
         <Header2>{this.props.titulo}</Header2>
@@ -42,7 +32,7 @@ export default class CardServicos extends React.Component {
 
 
 
-          <Header4><a href="#" onClick={()=>this.props.trocarTela("detalhes")}>Ver detalhes</a></Header4>
+          <Header4><a href="#" onClick={()=>this.props.trocarTela("detalhe")}>Ver detalhes</a></Header4>
 
 
           <img src={Carrinho} />

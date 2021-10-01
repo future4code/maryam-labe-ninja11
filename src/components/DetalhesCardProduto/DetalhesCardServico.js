@@ -20,7 +20,7 @@ import { EstiloDetalhesCardServicos } from "./EstiloDetalhesCardProduto";
               <br/>
               <nav>
                 <Botao 
-                onClick={() => this.props.trocarTela("servicos")}
+                onClick={() => this.props.trocarTela("lista")}
                 nome={'Voltar'} />
               </nav>
             </EstiloDetalhesCardServicos>

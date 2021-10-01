@@ -4,6 +4,8 @@ import { MainContainer, Descricao, FiltroContainer, InputContainer, LabelContain
 import CardServicos from "../CardServicos/CardServicos"
 // import { CardServicos } from '../CardServicos'
 import { url } from '../../url/url'
+import TelaDetalhes from "../TelaDetalhesCardServicos/TelaDetalhes"
+import ListaServicos from "./ListaServicos"
 
 const headers = {
     headers: {
@@ -17,7 +19,8 @@ export default class TelaServicos extends React.Component {
         valorMaximo: "",
         valorMinimo: "",
         busca: "",
-        ordenacao: ""
+        ordenacao: "",
+        tela: "lista"
     }
 
     componentDidMount() {
@@ -90,56 +93,44 @@ export default class TelaServicos extends React.Component {
                         formasDePagamento={servico.paymentMethods}
                         descricao={servico.description}
                         adicionar={() => this.props.adicionarAoCarrinho}
-                        trocarTela={this.props.trocarTela}
+                        trocarTela={this.atualizaTela}
                     />
                 )
             })
         return listaMapeada;
     }
 
+    atualizaTela = (tela) => {
+        this.setState({ tela: tela })
+    }
 
+    renderizarTela = () => {
+        if (this.state.tela === "lista"){
+            return (
+                <ListaServicos 
+                    renderizarCards={this.renderizarCards()}
+                    onChangeValorMaximo={this.onChangeValorMaximo}
+                    onChangeValorMinimo={this.onChangeValorMinimo}
+                    onChangeBusca={this.onChangeBusca}
+                    onChangeOrdenacao={this.onChangeOrdenacao}
+                />
+                
+            )
+        }
+        if(this.state.tela === "detalhe"){
+            return (
+                <TelaDetalhes 
+                    trocarTela={this.atualizaTela}
+                />
+            )
+        }
+    }
 
     render() {
         return (
             <div>
-                <MainContainer>
-                    <FiltroContainer>
-                        <LabelContainer>
-                            <label>Valor minimo</label>
-                            <InputContainer>
-                                <TextoInput>R$</TextoInput>
-                                <input onChange={this.onChangeValorMinimo} />
-                            </InputContainer>
-                        </LabelContainer>
-                        <LabelContainer>
-                            <label>Valor máximo</label>
-                            <InputContainer>
-                                <TextoInput>R$</TextoInput>
-                                <input onChange={this.onChangeValorMaximo} />
-                            </InputContainer>
-                        </LabelContainer>
-                        <LabelContainer>
-                            <label>Buscar</label>
-                            <InputContainer>
-
-                                <input onChange={this.onChangeBusca} placeholder="Título ou descrição" />
-                            </InputContainer>
-                        </LabelContainer>
-                        <SelectContainer>
-                            <label>Ordenar por</label>
-                            <select
-                                onChange={this.onChangeOrdenacao}>
-                                <option value="maior-preco">Maior preço</option>
-                                <option value="menor-preco">Menor preço</option>
-                                <option value="titulo">Titulo</option>
-                                <option value="prazo">Prazo</option>
-                            </select>
-                        </SelectContainer>
-
-                    </FiltroContainer>
-
-                    {this.renderizarCards()}
-                </MainContainer>
+                {this.renderizarTela()}
+                
 
             </div>
         )
