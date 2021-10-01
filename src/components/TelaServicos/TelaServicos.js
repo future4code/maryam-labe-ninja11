@@ -80,8 +80,10 @@ export default class TelaServicos extends React.Component {
                         return servicoAtual.title.localeCompare(servicoProximo.title);
                     case "menor-preco":
                         return -1 * (servicoProximo.price - servicoAtual.price);
+                    // case "prazo":
+                    //     return servicoAtual.dueDate > servicoProximo.dueDate;
                     case "prazo":
-                        return servicoAtual.dueDate > servicoProximo.dueDate;
+                            return servicoAtual.dueDate.localeCompare(servicoProximo.dueDate)
                     default:
                         return null;
                 }
