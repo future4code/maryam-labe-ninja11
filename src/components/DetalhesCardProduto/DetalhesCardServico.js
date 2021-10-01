@@ -1,6 +1,6 @@
 import React from "react";
 import Botao from "../Botao/Botao";
-import { Header2, Header3, Header5, TextoCorpo, TextoCorpoStrong } from "../Estilos";
+import { Header2, Header3, Header5, TextoCorpoStrong } from "../Estilos";
 import { EstiloDetalhesCardServicos } from "./EstiloDetalhesCardProduto";
 
   export default class DetalhesCardServicos extends React.Component{
@@ -22,7 +22,6 @@ import { EstiloDetalhesCardServicos } from "./EstiloDetalhesCardProduto";
                 <Botao 
                 onClick={() => this.props.trocarTela("servicos")}
                 nome={'Voltar'} />
-                <Botao nome={'Adicionar ao carrinho'} />
               </nav>
             </EstiloDetalhesCardServicos>
           )
