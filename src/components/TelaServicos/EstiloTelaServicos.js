@@ -43,6 +43,13 @@ export const MainContainer = styled.div `
     label {
         color: #8265c9;
     }
+
+    @media (max-width: 1025px){
+        width: 100%;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 `
 
 export const Descricao = styled.textarea `
@@ -56,6 +63,11 @@ export const Descricao = styled.textarea `
 export const FiltroContainer = styled.div `
     display: flex;
     grid-column: 1/5;
+    
+    @media (max-width: 1025px){
+        display: flex;
+        flex-direction: column;
+    }
 `
 
 export const InputContainer = styled.div `

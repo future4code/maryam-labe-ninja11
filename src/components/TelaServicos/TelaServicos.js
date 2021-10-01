@@ -38,7 +38,10 @@ export default class TelaServicos extends React.Component {
                         titulo={servico.title}
                         dataFinal={servico.dueDate}
                         preco={servico.price}
+                        formasDePagamento={servico.paymentMethods}
+                        descricao={servico.description}
                         adicionar={() => this.props.adicionarAoCarrinho}
+                        trocarTela={this.props.trocarTela}
                     />
                 )
             })
@@ -73,18 +76,7 @@ export default class TelaServicos extends React.Component {
                         </div>
 
                      </FiltroContainer>
-                    {this.state.servicos.map((servico) => {
-                        return <CardServicos 
-                            titulo={servico.title}
-                            dataFinal={servico.dueDate}
-                            preco={servico.price}
-
-
-                            trocarTela={this.props.trocarTela}
-                        
-
-                        />
-                    })}
+                    {this.renderizarCards()}
                 </MainContainer> 
 
             </div>

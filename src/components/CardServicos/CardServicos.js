@@ -30,7 +30,7 @@ export default class CardServicos extends React.Component {
 
 
 
-          <Header4><a href="#" onClick={()=>this.props.trocarTela("detalhe")}>Ver detalhes</a></Header4>
+          <Header4><a href="#" onClick={()=>this.props.trocarTela("detalhes")}>Ver detalhes</a></Header4>
 
 
           <img src={Carrinho} />
