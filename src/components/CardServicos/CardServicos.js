@@ -16,6 +16,8 @@ import {
   EstiloCardServicos,
   ContainerDetalhes
 } from "./EstiloCardServicos";
+import TelaDetalhes from "../TelaDetalhesCardServicos/TelaDetalhes";
+import Botao from "../Botao/Botao";
 
 export default class CardServicos extends React.Component {
   render() {
@@ -25,9 +27,17 @@ export default class CardServicos extends React.Component {
         <TextoCorpo>Até {this.props.dataFinal} por</TextoCorpo>
         <TextoCorpoStrong> R${this.props.preco}</TextoCorpoStrong>
         <ContainerDetalhes>
-          <Header4><a href="#">Ver detalhes</a></Header4>
+
+
+
+          <Header4><a href="#" onClick={()=>this.props.trocarTela("detalhes")}>Ver detalhes</a></Header4>
+
+
           <img src={Carrinho} />
         </ContainerDetalhes>
+        <Botao
+          nome={"Adicionar ao carrinho"}
+          onClick={() => this.props.adicionar()} />
       </EstiloCardServicos>
     )
   }
