@@ -1,6 +1,6 @@
 import React from "react"
 import axios from "axios"
-import { MainContainer, Descricao, FiltroContainer, InputContainer, LabelContainer, TextoInput, SelectContainer} from './EstiloTelaServicos'
+import { MainContainer, Descricao, FiltroContainer, InputContainer, LabelContainer, TextoInput, SelectContainer } from './EstiloTelaServicos'
 import CardServicos from "../CardServicos/CardServicos"
 // import { CardServicos } from '../CardServicos'
 import { url } from '../../url/url'
@@ -50,7 +50,7 @@ export default class TelaServicos extends React.Component {
 
     onChangeOrdenacao = (event) => {
         this.setState({ ordenacao: event.target.value })
-      }
+    }
 
     renderizarCards = () => {
         const listaMapeada = this.state.servicos
@@ -83,7 +83,8 @@ export default class TelaServicos extends React.Component {
                         preco={servico.price}
                         formasDePagamento={servico.paymentMethods}
                         descricao={servico.description}
-                        adicionar={() => this.props.adicionarAoCarrinho}
+                        adicionar={this.props.adicionar}
+                        produto={servico}
                         trocarTela={this.props.trocarTela}
                     />
                 )
@@ -91,7 +92,7 @@ export default class TelaServicos extends React.Component {
         return listaMapeada;
     }
 
-    
+
 
     render() {
         return (
@@ -102,21 +103,21 @@ export default class TelaServicos extends React.Component {
                             <label>Valor minimo</label>
                             <InputContainer>
                                 <TextoInput>R$</TextoInput>
-                                <input onChange={this.onChangeValorMinimo}/>
+                                <input onChange={this.onChangeValorMinimo} />
                             </InputContainer>
                         </LabelContainer>
                         <LabelContainer>
                             <label>Valor máximo</label>
                             <InputContainer>
                                 <TextoInput>R$</TextoInput>
-                                <input onChange={this.onChangeValorMaximo}/>   
+                                <input onChange={this.onChangeValorMaximo} />
                             </InputContainer>
                         </LabelContainer>
                         <LabelContainer>
                             <label>Buscar</label>
                             <InputContainer>
-                            
-                                <input onChange={this.onChangeBusca} placeholder="Título ou descrição"/>
+
+                                <input onChange={this.onChangeBusca} placeholder="Título ou descrição" />
                             </InputContainer>
                         </LabelContainer>
                         <SelectContainer>
@@ -130,10 +131,10 @@ export default class TelaServicos extends React.Component {
                             </select>
                         </SelectContainer>
 
-                     </FiltroContainer>
+                    </FiltroContainer>
 
                     {this.renderizarCards()}
-                </MainContainer> 
+                </MainContainer>
 
             </div>
         )
