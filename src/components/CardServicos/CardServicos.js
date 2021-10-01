@@ -18,9 +18,21 @@ import {
 } from "./EstiloCardServicos";
 import TelaDetalhes from "../TelaDetalhesCardServicos/TelaDetalhes";
 import Botao from "../Botao/Botao";
+import moment from "moment";
 
 export default class CardServicos extends React.Component {
   render() {
+    // console.log(this.props.dataFinal)
+    // const data = this.props.dataFinal;
+    // console.log(data)
+    // console.log(new Intl.DateTimeFormat('pt-BR').format(data))
+    // console.log(new Intl.DateTimeFormat('pt-BR').format(this.props.dataFinal));
+    // const data = moment().format(this.props.dataFinal);
+    // console.log("data formatada",data)
+    // console.log(this.props.dataFinal.toLocaleDateString())
+
+    // console.log(this.props.dataFinal)
+    // console.log(new Intl.DateTimeFormat('pt-BR').format(this.props.dataFinal));
     return (
       <EstiloCardServicos>
         <Header2>{this.props.titulo}</Header2>
