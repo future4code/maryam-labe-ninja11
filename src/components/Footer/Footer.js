@@ -12,6 +12,7 @@ export default class Footer extends React.Component {
                     <IconesRedesSociais src={require('../../Img/icone-facebook.png')} alt="Facebook" title="Curta a nossa página no Facebook!"/>
                     <IconesRedesSociais src={require('../../Img/icone-instagram.png')} alt="Instagram" title="Siga o nosso perfil no Instagram!"/>
                     <IconesRedesSociais src={require('../../Img/icone-twitter.png')} alt="Twitter" title="Siga o nosso perfil no Twitter!"/>
+                        Contato: labeninjas@gmail.com | (11) 2222-1242
 
                 </IconesContainer>  
 
