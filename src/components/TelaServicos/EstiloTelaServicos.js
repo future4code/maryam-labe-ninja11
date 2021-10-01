@@ -7,7 +7,6 @@ export const MainContainer = styled.div `
     grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-items: center;
     align-items: center;
-    /* border: 2px solid purple; */
     border-radius: 4px;
     padding: 10px;
     margin: 10px;
@@ -15,11 +14,14 @@ export const MainContainer = styled.div `
     height: fit-content;
 
     input {
-        padding: 0.5em 0.5em;
-        /* border-radius: 9px; */
+
         border: none;
         outline: none;
         font-size: 1rem;
+        color: #8265c9;
+        ::placeholder{
+            color: #8265c9;
+        }
     }
 
     button {
@@ -31,12 +33,12 @@ export const MainContainer = styled.div `
     }
 
     select {
-        /* border-radius: 9px; */
+        
         border: 1px solid #8265c9;
-        width: 170px;
+        /* width: 170px; */
         text-align: center;
         color: #8265c9;
-        padding: 0.5em 0.5em;
+        /* padding: 0.5em 0.5em; */
         font-size: 1rem;
     }
 
@@ -52,13 +54,7 @@ export const MainContainer = styled.div `
     }
 `
 
-export const Descricao = styled.textarea `
-    height: 70px;
-    border-radius: 3px;
-    border: 1px solid purple;
-    font-family: Arial;
-    color: black;
-`
+
 
 export const FiltroContainer = styled.div `
     display: flex;
@@ -70,9 +66,28 @@ export const FiltroContainer = styled.div `
     }
 `
 
-export const InputContainer = styled.div `
+export const LabelContainer = styled.div `
     display: flex;
     flex-direction: column;
     margin: 0.5rem;
+    /* border: 1px solid #8265c9; */
+`
+export const InputContainer = styled.div `
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    /* margin: 0.5rem; */
     border: 1px solid #8265c9;
+`
+export const SelectContainer = styled.div `
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    /* border: 1px solid #8265c9; */
+`
+
+
+export const TextoInput = styled.p`
+    color: #8265c9;
 `
