@@ -92,8 +92,9 @@ export default class TelaServicos extends React.Component {
                         preco={servico.price}
                         formasDePagamento={servico.paymentMethods}
                         descricao={servico.description}
-                        adicionar={() => this.props.adicionarAoCarrinho}
-                        trocarTela={this.atualizaTela}
+                        adicionar={this.props.adicionar}
+                        produto={servico}
+                        trocarTela={this.props.trocarTela}
                     />
                 )
             })
@@ -105,21 +106,21 @@ export default class TelaServicos extends React.Component {
     }
 
     renderizarTela = () => {
-        if (this.state.tela === "lista"){
+        if (this.state.tela === "lista") {
             return (
-                <ListaServicos 
+                <ListaServicos
                     renderizarCards={this.renderizarCards()}
                     onChangeValorMaximo={this.onChangeValorMaximo}
                     onChangeValorMinimo={this.onChangeValorMinimo}
                     onChangeBusca={this.onChangeBusca}
                     onChangeOrdenacao={this.onChangeOrdenacao}
                 />
-                
+
             )
         }
-        if(this.state.tela === "detalhe"){
+        if (this.state.tela === "detalhe") {
             return (
-                <TelaDetalhes 
+                <TelaDetalhes
                     trocarTela={this.atualizaTela}
                 />
             )
@@ -130,7 +131,7 @@ export default class TelaServicos extends React.Component {
         return (
             <div>
                 {this.renderizarTela()}
-                
+
 
             </div>
         )

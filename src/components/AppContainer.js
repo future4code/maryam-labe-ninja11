@@ -20,8 +20,7 @@ const headers = {
 
 export class AppContainer extends Component {
   state = {
-
-    tela: "home",
+    tela: "servicos",
     servicos: [],
     carrinho: [],
   }
@@ -33,16 +32,16 @@ export class AppContainer extends Component {
   buscarTodosOsServicos = async () => {
     try {
       const todosOsServicos = await axios.get(`${url}/jobs`, headers)
-      console.log(todosOsServicos.data.jobs)
+      console.log("TODOS OS SERVIÇOS", todosOsServicos.data.jobs)
       this.setState({ servicos: todosOsServicos.data.jobs })
     } catch (err) {
-      console.log(err)
+      console.log("ERRO API", err)
     }
   }
 
   adicionarAoCarrinho = (produto) => {
     this.setState({ carrinho: [...this.state.carrinho, produto] })
-
+    console.log("CARRINHO", this.state.carrinho)
   }
 
   trocarTela = (tela) => {
@@ -54,7 +53,6 @@ export class AppContainer extends Component {
       return (
         <Home
           trocarTela={(tela) => this.trocarTela(tela)}
-          teste="Estou sendo passada"
         />
       )
     }
@@ -65,7 +63,10 @@ export class AppContainer extends Component {
     }
     if (this.state.tela === "servicos") {
       return (
-        <TelaServicos trocarTela={this.trocarTela}/>
+        <TelaServicos
+          trocarTela={this.trocarTela}
+          adicionar={(produto) => this.adicionarAoCarrinho(produto)
+          } />
       )
     }
     if (this.state.tela === "carrinho") {
