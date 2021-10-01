@@ -41,6 +41,7 @@ export class AppContainer extends Component {
 
   adicionarAoCarrinho = (produto) => {
     this.setState({ carrinho: [...this.state.carrinho, produto] })
+    alert('Adicionado ao carrinho com sucesso!')
   }
 
   trocarTela = (tela) => {

@@ -32,7 +32,7 @@ export default class CardServicos extends React.Component {
           <img src={Carrinho} />
         </ContainerDetalhes>
         <Botao
-          nome={"Adicionar ao carrinho"}
+          nome={'Adicionar ao carrinho'}
           onClick={() => this.props.adicionar(this.props.produto)} />
       </EstiloCardServicos>
     )

@@ -25,14 +25,6 @@ export const MainContainer = styled.div `
         }
     }
 
-    button {
-        padding: 5px;
-        border-radius: 3px;
-        border: 1px solid purple;
-        color: white;
-        background-color: #8265c9;
-    }
-
     select {
         
         border: 1px solid #8265c9;
