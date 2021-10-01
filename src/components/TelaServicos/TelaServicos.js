@@ -1,6 +1,6 @@
 import React from "react"
 import axios from "axios"
-import { MainContainer, Descricao, FiltroContainer, InputContainer } from './EstiloTelaServicos'
+import { MainContainer, Descricao, FiltroContainer, InputContainer, LabelContainer, TextoInput, SelectContainer} from './EstiloTelaServicos'
 import CardServicos from "../CardServicos/CardServicos"
 // import { CardServicos } from '../CardServicos'
 import { url } from '../../url/url'
@@ -16,7 +16,8 @@ export default class TelaServicos extends React.Component {
         servicos: [],
         valorMaximo: "",
         valorMinimo: "",
-        busca: ""
+        busca: "",
+        ordenacao: ""
     }
 
     componentDidMount() {
@@ -47,6 +48,10 @@ export default class TelaServicos extends React.Component {
         this.setState({ busca: event.target.value });
     }
 
+    onChangeOrdenacao = (event) => {
+        this.setState({ ordenacao: event.target.value })
+      }
+
     renderizarCards = () => {
         const listaMapeada = this.state.servicos
             .filter((servico) => {
@@ -57,6 +62,18 @@ export default class TelaServicos extends React.Component {
             })
             .filter((servico) => {
                 return this.state.valorMinimo === "" || servico.price > this.state.valorMinimo
+            })
+            .sort((servicoAtual, servicoProximo) => {
+                switch (this.state.ordenacao) {
+                    case "maior-preco":
+                        return servicoProximo.price - servicoAtual.price;
+                    case "titulo":
+                        return servicoAtual.title.localeCompare(servicoProximo.title);
+                    case "menor-preco":
+                        return -1 * (servicoProximo.price - servicoAtual.price);
+                    default:
+                        return null;
+                }
             })
             .map(servico => {
                 return (
@@ -78,27 +95,37 @@ export default class TelaServicos extends React.Component {
             <div>
                 <MainContainer>
                     <FiltroContainer>
-                        <InputContainer>
+                        <LabelContainer>
                             <label>Valor minimo</label>
-                            <div>R$<input onChange={this.onChangeValorMinimo}/></div>
-                        </InputContainer>
-                        <InputContainer>
+                            <InputContainer>
+                                <TextoInput>R$</TextoInput>
+                                <input onChange={this.onChangeValorMinimo}/>
+                            </InputContainer>
+                        </LabelContainer>
+                        <LabelContainer>
                             <label>Valor máximo</label>
-                            <div>R$<input onChange={this.onChangeValorMaximo}/></div>
-                        </InputContainer>
-                        <InputContainer>
+                            <InputContainer>
+                                <TextoInput>R$</TextoInput>
+                                <input onChange={this.onChangeValorMaximo}/>   
+                            </InputContainer>
+                        </LabelContainer>
+                        <LabelContainer>
                             <label>Buscar</label>
-                            <input onChange={this.onChangeBusca}/>
-                        </InputContainer>
-                        <div>
-                            <p>Ordenar por</p>
-                            <select>
-                                <option>Maior preço</option>
-                                <option>Menor preço</option>
-                                <option>Titulo</option>
-                                <option>Prazo</option>
+                            <InputContainer>
+                            
+                                <input onChange={this.onChangeBusca} placeholder="Título ou descrição"/>
+                            </InputContainer>
+                        </LabelContainer>
+                        <SelectContainer>
+                            <label>Ordenar por</label>
+                            <select
+                                onChange={this.onChangeOrdenacao}>
+                                <option value="maior-preco">Maior preço</option>
+                                <option value="menor-preco">Menor preço</option>
+                                <option value="titulo">Titulo</option>
+                                <option value="descricao">Prazo</option>
                             </select>
-                        </div>
+                        </SelectContainer>
 
                      </FiltroContainer>
                     
