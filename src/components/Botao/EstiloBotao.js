@@ -6,5 +6,8 @@ export const EstiloBotao = styled.button`
     padding: 10px 20px;
     background-color: #8265c9;
     border-color: #8265c9;
-    color: white
+    color: white;
+    :hover{
+        cursor: pointer;
+    }
 `

@@ -20,7 +20,8 @@ export default class TelaServicos extends React.Component {
         valorMinimo: "",
         busca: "",
         ordenacao: "",
-        tela: "lista"
+        tela: "lista",
+        servicoDetalhe: ""
     }
 
     componentDidMount() {
@@ -94,13 +95,18 @@ export default class TelaServicos extends React.Component {
                         descricao={servico.description}
                         adicionar={this.props.adicionar}
                         produto={servico}
-                        trocarTela={this.atualizaTela}
+                        mostraDetalhe={this.mostraDetalhe}
                     />
                 )
             })
         return listaMapeada;
     }
 
+
+    mostraDetalhe = (servico) => {
+        {this.atualizaTela("detalhe")}
+        this.setState({servicoDetalhe: servico})
+    }
     atualizaTela = (tela) => {
         this.setState({ tela: tela })
     }
@@ -122,6 +128,7 @@ export default class TelaServicos extends React.Component {
             return (
                 <TelaDetalhes
                     trocarTela={this.atualizaTela}
+                    servico = {this.state.servicoDetalhe}
                 />
             )
         }
