@@ -41,7 +41,6 @@ export class AppContainer extends Component {
 
   adicionarAoCarrinho = (produto) => {
     this.setState({ carrinho: [...this.state.carrinho, produto] })
-    console.log("CARRINHO", this.state.carrinho)
   }
 
   trocarTela = (tela) => {
