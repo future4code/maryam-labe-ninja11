@@ -27,6 +27,8 @@ export const MainContainer = styled.div`
 export const IconesContainer = styled.div`
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 `
 
 export const TextoFooter = styled.div`
