@@ -71,7 +71,9 @@ export class AppContainer extends Component {
     }
     if (this.state.tela === "carrinho") {
       return (
-        <TelaCarrinho />
+        <TelaCarrinho
+          carrinho={this.state.carrinho}
+        />
       )
     }
   }
