@@ -9,6 +9,8 @@ import TelaServicos from './TelaServicos/TelaServicos';
 import Container from './Estilos.js'
 import { url } from '../url/url'
 import axios from 'axios';
+import Footer from './Footer/Footer';
+
 
 const headers = {
   headers: {
@@ -80,6 +82,7 @@ export class AppContainer extends Component {
           trocarTela={this.trocarTela}
         />
         {this.renderizarTela()}
+        <Footer />
       </div>
     )
   }
