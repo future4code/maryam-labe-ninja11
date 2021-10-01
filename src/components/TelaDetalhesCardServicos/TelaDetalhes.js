@@ -7,7 +7,7 @@ import { EstiloTelaDetalhes } from "./EstiloTelaDetalhes";
       render() {
           return(
             <EstiloTelaDetalhes>
-              <DetalhesCardServicos trocarTela={() => this.props.trocarTela("servicos")}/>
+              <DetalhesCardServicos trocarTela={this.props.trocarTela}/>
             </EstiloTelaDetalhes>
           )
       }

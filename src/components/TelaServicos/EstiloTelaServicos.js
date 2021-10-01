@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import ListaServicos from "./ListaServicos"
 
 // Estilo básico por enquanto, só para testar!
 
@@ -91,3 +92,4 @@ export const SelectContainer = styled.div `
 export const TextoInput = styled.p`
     color: #8265c9;
 `
+
