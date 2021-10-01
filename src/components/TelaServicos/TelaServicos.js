@@ -94,7 +94,7 @@ export default class TelaServicos extends React.Component {
                         descricao={servico.description}
                         adicionar={this.props.adicionar}
                         produto={servico}
-                        trocarTela={this.props.trocarTela}
+                        trocarTela={this.atualizaTela}
                     />
                 )
             })
