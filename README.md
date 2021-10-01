@@ -14,4 +14,4 @@ Projeto desenvolvido para o curso de Web Full Stack da Labenu, turma Maryam, em 
 <li><a href="https://github.com/future4code/maryam-labe-ninja11/blob/master/docs/Labeninjas-Wireframe.pdf">Wireframes</a></li>
 
 ## Link do Surge
-- <colar link>
+- colar link
