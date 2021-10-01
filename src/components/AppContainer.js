@@ -41,7 +41,6 @@ export class AppContainer extends Component {
 
   adicionarAoCarrinho = (produto) => {
     this.setState({ carrinho: [...this.state.carrinho, produto] })
-    console.log("CARRINHO", this.state.carrinho)
   }
 
   trocarTela = (tela) => {
@@ -71,7 +70,9 @@ export class AppContainer extends Component {
     }
     if (this.state.tela === "carrinho") {
       return (
-        <TelaCarrinho />
+        <TelaCarrinho
+          carrinho={this.state.carrinho}
+        />
       )
     }
   }
