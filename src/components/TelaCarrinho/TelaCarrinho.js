@@ -25,8 +25,12 @@ export default class TelaCarrinho extends React.Component {
                 <EstiloTotalFinaliza>
                     <Header5>Total: R$</Header5>
                     <nav>
-                        <Botao nome={'Finalizar compra'} />
-                        <Botao nome={'Limpar carrinho'} />
+                        <Botao nome={'Finalizar compra'}
+                            onClick={this.props.finalizarCompra}
+                        />
+                        <Botao nome={'Limpar carrinho'}
+                            onClick={this.props.limparCarrinho}
+                        />
                     </nav>
                 </EstiloTotalFinaliza>
             </EstiloTelaCarrinho>

@@ -44,6 +44,15 @@ export class AppContainer extends Component {
     alert('Adicionado ao carrinho com sucesso!')
   }
 
+  limparCarrinho = () => {
+    this.setState({ carrinho: [] })
+  }
+
+  finalizarCompra = () => {
+    this.setState({ carrinho: [] })
+    alert('Compra finalizada com sucesso. Agradecemos por comprar com a gente!')
+  }
+
   trocarTela = (tela) => {
     this.setState({ tela: tela })
   }
@@ -73,6 +82,8 @@ export class AppContainer extends Component {
       return (
         <TelaCarrinho
           carrinho={this.state.carrinho}
+          limparCarrinho={this.limparCarrinho}
+          finalizarCompra={this.finalizarCompra}
         />
       )
     }
