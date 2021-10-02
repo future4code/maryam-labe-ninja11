@@ -24,7 +24,7 @@ import { convertDate } from './ConvertDate';
 
 export default class CardServicos extends React.Component {
   render() {
-  
+
     return (
       <EstiloCardServicos>
         <Header2>{this.props.titulo}</Header2>
@@ -36,7 +36,7 @@ export default class CardServicos extends React.Component {
         </ContainerDetalhes>
         <Botao
           nome={'Adicionar ao carrinho'}
-          onClick={() => this.props.adicionar(this.props.produto)} />
+          onClick={() => this.props.adicionar(this.props.servico)} />
       </EstiloCardServicos>
     )
   }
