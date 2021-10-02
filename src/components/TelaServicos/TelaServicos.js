@@ -56,7 +56,7 @@ export default class TelaServicos extends React.Component {
         this.setState({ ordenacao: event.target.value })
     }
 
-    
+
 
     renderizarCards = () => {
 
@@ -83,7 +83,7 @@ export default class TelaServicos extends React.Component {
                     // case "prazo":
                     //     return servicoAtual.dueDate > servicoProximo.dueDate;
                     case "prazo":
-                            return servicoAtual.dueDate.localeCompare(servicoProximo.dueDate)
+                        return servicoAtual.dueDate.localeCompare(servicoProximo.dueDate)
                     default:
                         return null;
                 }
@@ -108,8 +108,8 @@ export default class TelaServicos extends React.Component {
 
 
     mostraDetalhe = (servico) => {
-        {this.atualizaTela("detalhe")}
-        this.setState({servicoDetalhe: servico})
+        { this.atualizaTela("detalhe") }
+        this.setState({ servicoDetalhe: servico })
     }
     atualizaTela = (tela) => {
         this.setState({ tela: tela })
@@ -132,7 +132,7 @@ export default class TelaServicos extends React.Component {
             return (
                 <TelaDetalhes
                     trocarTela={this.atualizaTela}
-                    servico = {this.state.servicoDetalhe}
+                    servico={this.state.servicoDetalhe}
                 />
             )
         }

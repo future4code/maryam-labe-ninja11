@@ -65,7 +65,7 @@ export class AppContainer extends Component {
       return (
         <TelaServicos
           trocarTela={this.trocarTela}
-          adicionar={(produto) => this.adicionarAoCarrinho(produto)
+          adicionar={(servico) => this.adicionarAoCarrinho(servico)
           } />
       )
     }
