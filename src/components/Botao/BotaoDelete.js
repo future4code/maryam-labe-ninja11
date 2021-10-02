@@ -4,7 +4,8 @@ import { EstiloBotaoDelete } from "./EstiloBotaoDelete";
 export default class BotaoDelete extends React.Component {
   render() {
     return (
-      <EstiloBotaoDelete>x</EstiloBotaoDelete>
+      <EstiloBotaoDelete
+        onClick={this.props.onClick}>x</EstiloBotaoDelete>
     );
   }
 }

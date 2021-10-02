@@ -44,6 +44,22 @@ export class AppContainer extends Component {
     alert('Adicionado ao carrinho com sucesso!')
   }
 
+  removerDoCarrinho = (produto) => {
+    const carrinho = [...this.state.carrinho]
+    const indexProduto = carrinho.indexOf(produto);
+    carrinho.splice(indexProduto, 1);
+    this.setState({ carrinho: carrinho })
+  }
+
+  limparCarrinho = () => {
+    this.setState({ carrinho: [] })
+  }
+
+  finalizarCompra = () => {
+    this.setState({ carrinho: [] })
+    alert('Compra finalizada com sucesso. Agradecemos por comprar com a gente!')
+  }
+
   trocarTela = (tela) => {
     this.setState({ tela: tela })
   }
@@ -65,14 +81,17 @@ export class AppContainer extends Component {
       return (
         <TelaServicos
           trocarTela={this.trocarTela}
-          adicionar={(servico) => this.adicionarAoCarrinho(servico)
-          } />
+          adicionar={(servico) => this.adicionarAoCarrinho(servico)}
+        />
       )
     }
     if (this.state.tela === "carrinho") {
       return (
         <TelaCarrinho
           carrinho={this.state.carrinho}
+          limparCarrinho={this.limparCarrinho}
+          finalizarCompra={this.finalizarCompra}
+          remover={(servico) => this.removerDoCarrinho(servico)}
         />
       )
     }
