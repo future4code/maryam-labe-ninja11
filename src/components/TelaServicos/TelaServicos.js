@@ -6,6 +6,7 @@ import CardServicos from "../CardServicos/CardServicos"
 import { url } from '../../url/url'
 import TelaDetalhes from "../TelaDetalhesCardServicos/TelaDetalhes"
 import ListaServicos from "./ListaServicos"
+import Carregando from '../Loader/Carregando'
 
 const headers = {
     headers: {
@@ -21,7 +22,8 @@ export default class TelaServicos extends React.Component {
         busca: "",
         ordenacao: "",
         tela: "lista",
-        servicoDetalhe: ""
+        servicoDetalhe: "",
+        loading: false
     }
 
     componentDidMount() {
@@ -33,6 +35,7 @@ export default class TelaServicos extends React.Component {
             const todosOsServicos = await axios.get(`${url}/jobs`, headers)
             console.log(todosOsServicos.data.jobs)
             this.setState({ servicos: todosOsServicos.data.jobs })
+            this.setState({ loading : true })
         } catch (err) {
             console.log(err)
         }
@@ -139,9 +142,12 @@ export default class TelaServicos extends React.Component {
     }
 
     render() {
+        const {loading} = this.state
         return (
             <div>
-                {this.renderizarTela()}
+               {
+                   loading ? this.renderizarTela() : <Carregando />
+               }
 
 
             </div>
