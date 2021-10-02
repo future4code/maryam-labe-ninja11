@@ -44,6 +44,13 @@ export class AppContainer extends Component {
     alert('Adicionado ao carrinho com sucesso!')
   }
 
+  removerDoCarrinho = (produto) => {
+    const carrinho = [...this.state.carrinho]
+    const indexProduto = carrinho.indexOf(produto);
+    carrinho.splice(indexProduto, 1);
+    this.setState({ carrinho: carrinho })
+  }
+
   limparCarrinho = () => {
     this.setState({ carrinho: [] })
   }
@@ -74,8 +81,8 @@ export class AppContainer extends Component {
       return (
         <TelaServicos
           trocarTela={this.trocarTela}
-          adicionar={(servico) => this.adicionarAoCarrinho(servico)
-          } />
+          adicionar={(servico) => this.adicionarAoCarrinho(servico)}
+        />
       )
     }
     if (this.state.tela === "carrinho") {
@@ -84,6 +91,7 @@ export class AppContainer extends Component {
           carrinho={this.state.carrinho}
           limparCarrinho={this.limparCarrinho}
           finalizarCompra={this.finalizarCompra}
+          remover={(servico) => this.removerDoCarrinho(servico)}
         />
       )
     }

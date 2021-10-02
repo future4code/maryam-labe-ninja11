@@ -5,6 +5,9 @@ import { Titulo, Header3, Header5 } from '../Estilos';
 import { EstiloTelaCarrinho, EstiloTotalFinaliza } from "./EstiloTelaCarrinho";
 
 export default class TelaCarrinho extends React.Component {
+    state = {
+        valorTotal: 0
+    }
     renderizarCards = () => {
         const listaCards = this.props.carrinho
             .map(servico => {
@@ -12,6 +15,9 @@ export default class TelaCarrinho extends React.Component {
                     <CardProdutoCarrinho key={servico.id}
                         titulo={servico.title}
                         preco={servico.price}
+                        adicionar={this.props.adicionar}
+                        remover={this.props.remover}
+                        servico={servico}
                     />
                 )
             })
