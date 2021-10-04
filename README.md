@@ -4,7 +4,7 @@ Projeto desenvolvido para o curso de Web Full Stack da Labenu, turma Maryam, em 
 ## Equipe
 - Juliany Santos Vasconcelos Bandeira
 - Leticia Agante de Brito
-- Maria Carolina de Souza
+- Mariana Carolina de Souza
 - Maria Helena Veloso Campos de Souza
 - Milena Lara Reis Ferreira
 
