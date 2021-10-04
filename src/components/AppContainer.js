@@ -67,11 +67,11 @@ export class AppContainer extends Component {
   }
 
   limparCarrinho = () => {
-    this.setState({ carrinho: [] })
+    this.setState({ carrinho: [], valorTotal: 0 })
   }
 
   finalizarCompra = () => {
-    this.setState({ carrinho: [] })
+    this.setState({ carrinho: [], valorTotal: 0 })
     alert('Compra finalizada com sucesso. Agradecemos por comprar com a gente!')
   }
 
