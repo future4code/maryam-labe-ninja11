@@ -21,8 +21,9 @@ const headers = {
 export class AppContainer extends Component {
   state = {
     tela: "home",
+    valorTotal: 0,
     servicos: [],
-    carrinho: [],
+    carrinho: []
   }
 
   componentDidMount() {
@@ -42,13 +43,27 @@ export class AppContainer extends Component {
   adicionarAoCarrinho = (produto) => {
     this.setState({ carrinho: [...this.state.carrinho, produto] })
     alert('Adicionado ao carrinho com sucesso!')
+    const precoNumber = Number(produto.price)
+    this.somarValorTotal(precoNumber)
   }
+
+  somarValorTotal = (preco) => {
+
+    this.setState({valorTotal: this.state.valorTotal + preco})
+  } 
 
   removerDoCarrinho = (produto) => {
     const carrinho = [...this.state.carrinho]
     const indexProduto = carrinho.indexOf(produto);
     carrinho.splice(indexProduto, 1);
     this.setState({ carrinho: carrinho })
+    const precoNumber = Number(produto.price)
+    this.subtrairValorTotal(precoNumber)
+  }
+
+  subtrairValorTotal = (preco) => {
+    
+    this.setState({valorTotal: this.state.valorTotal - preco})
   }
 
   limparCarrinho = () => {
@@ -92,6 +107,8 @@ export class AppContainer extends Component {
           limparCarrinho={this.limparCarrinho}
           finalizarCompra={this.finalizarCompra}
           remover={(servico) => this.removerDoCarrinho(servico)}
+          trocarTela={this.trocarTela}
+          valorTotal={this.state.valorTotal}
         />
       )
     }

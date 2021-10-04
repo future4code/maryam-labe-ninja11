@@ -8,6 +8,13 @@ export default class TelaCarrinho extends React.Component {
     state = {
         valorTotal: 0
     }
+
+    valorTotal = () => {
+        this.props.carrinho.map(servico => {
+            return servico.price
+        })
+    }
+
     renderizarCards = () => {
         const listaCards = this.props.carrinho
             .map(servico => {
@@ -29,13 +36,16 @@ export default class TelaCarrinho extends React.Component {
             <EstiloTelaCarrinho>
                 {this.renderizarCards()}
                 <EstiloTotalFinaliza>
-                    <Header5>Total: R$</Header5>
+                    <Header5>Total: R${this.props.valorTotal}</Header5>
                     <nav>
                         <Botao nome={'Finalizar compra'}
                             onClick={this.props.finalizarCompra}
                         />
                         <Botao nome={'Limpar carrinho'}
                             onClick={this.props.limparCarrinho}
+                        />
+                        <Botao nome={'Voltar'}
+                            onClick={() => this.props.trocarTela("servicos")}
                         />
                     </nav>
                 </EstiloTotalFinaliza>
