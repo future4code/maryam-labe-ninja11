@@ -1,4 +1,4 @@
-# LabeNinjas
+# labNinjas
 Projeto desenvolvido para o curso de Web Full Stack da Labenu, turma Maryam, em setembro de 2021.
 
 ## Equipe
