@@ -20,7 +20,7 @@ const headers = {
 
 export class AppContainer extends Component {
   state = {
-    tela: "servicos",
+    tela: "home",
     servicos: [],
     carrinho: [],
   }
